@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sala Social - Prototipo V1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <h1>👑 Sala de Amigos</h1>
+        <div class="sub">ID 102938 · <span id="count">8</span>/20 · 🔒 Privada</div>
+      </div>
+      <nav>
+        <button data-action="settings">⚙️ Ajustes</button>
+        <button data-action="invite">➕ Invitar</button>
+        <button data-action="people">👥 Personas</button>
+        <button data-action="shop">🛒 Tienda</button>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <aside class="panel users">
+        <h2>Participantes</h2>
+        <div id="userList"></div>
+        <button class="primary" id="inviteBtn">+ Invitar amigos</button>
+      </aside>
+
+      <section class="room">
+        <div class="room-scene">
+          <div class="neon">BUENAS PERSONAS<br>GRANDES MOMENTOS</div>
+          <div class="tv">
+            <div class="tv-title">📺 Centro multimedia</div>
+            <div class="tv-actions">
+              <button>Música</button><button>Videos</button><button>YouTube</button><button>Favoritos</button>
+            </div>
+          </div>
+          <div class="sofa"></div>
+          <div class="table"></div>
+          <div id="avatars" class="avatars"></div>
+        </div>
+
+        <div class="actionbar">
+          <button id="toggleChat">💬 Chat</button>
+          <button id="voiceBtn">🎙️ Voz</button>
+          <button id="reactBtn">😊 Reacciones</button>
+          <button id="handBtn">✋ Levantar mano</button>
+          <button id="giftBtn">🎁 Regalo</button>
+          <button class="danger" id="leaveBtn">🚪 Salir</button>
+        </div>
+      </section>
+
+      <aside class="panel moderation">
+        <h2>Gestionar sala</h2>
+        <button>🛡️ Permisos</button>
+        <button>🔐 Contraseña</button>
+        <button>👤 Expulsar</button>
+        <button>🚫 Bloquear</button>
+        <button>🚩 Reportar</button>
+      </aside>
+    </main>
+
+    <section class="chat panel" id="chatPanel">
+      <div id="messages"></div>
+      <form id="chatForm">
+        <input id="messageInput" maxlength="140" placeholder="Escribe un mensaje..." autocomplete="off" />
+        <button class="primary">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <dialog id="modal">
+    <div class="modal-card">
+      <h3 id="modalTitle">Acción</h3>
+      <p id="modalText"></p>
+      <button id="closeModal" class="primary">Cerrar</button>
+    </div>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
